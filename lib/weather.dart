@@ -60,10 +60,10 @@ class Weather extends StatelessWidget {
 
                   return Expanded(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         Container(
-                          height: MediaQuery.of(context).size.height/4,
+                          //height: MediaQuery.of(context).size.height/4,
                           child: Center(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -92,14 +92,14 @@ class Weather extends StatelessWidget {
                           child: SingleChildScrollView(
                             child: Container(
                               padding: EdgeInsets.only(top: 40, bottom: 40),
-                              //height: MediaQuery.of(context).size.height*2/3,
+                              height: MediaQuery.of(context).size.height*2/3,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.vertical(
                                     top: Radius.circular(40), bottom: Radius.zero),
                               ),
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
