@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:weather_api/blocs/blocs.dart';
-import 'package:weather_api/constants.dart';
+import 'package:weather_api/widgets/detailCard.dart';
 
 class Weather extends StatelessWidget {
   @override
@@ -92,6 +92,7 @@ class Weather extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 20,
                                       color: Colors.white,
+                                      fontWeight: FontWeight.bold
                                     ),
                                   ),
                                 ],
@@ -178,7 +179,11 @@ class Weather extends StatelessWidget {
                                               padding: EdgeInsets.all(10),
                                               child: Column(
                                                 children: <Widget>[
-                                                  Icon(Icons.wb_sunny),
+                                                  Image(
+                                                    image: AssetImage('assets/sunrise.png'),
+                                                    height: 50,
+                                                    width: 50,
+                                                  ),
                                                   SizedBox(height: 20),
                                                   Text('${weather.sunRise} AM IST'),
                                                 ],
@@ -190,7 +195,11 @@ class Weather extends StatelessWidget {
                                               padding: EdgeInsets.all(10),
                                               child: Column(
                                                 children: <Widget>[
-                                                  Icon(Icons.wb_sunny),
+                                                  Image(
+                                                    image: AssetImage('assets/sunset.png'),
+                                                    height: 50,
+                                                    width: 50,
+                                                  ),
                                                   SizedBox(height: 20),
                                                   Text('${weather.sunSet} PM IST'),
                                                 ],
