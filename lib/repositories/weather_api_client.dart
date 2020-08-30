@@ -15,7 +15,7 @@ class WeatherApiClient {
 
   Future<Weather> fetchWeather(String city) async {
 
-    final weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=8d90a8c36c95dea6d49d32c51bec21f6';
+    final weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=8d90a8c36c95dea6d49d32c51bec21f6';
     final weatherResponse = await this.httpClient.get(weatherUrl);
     if (weatherResponse.statusCode != 200) {
       print('error getting weather for location');
