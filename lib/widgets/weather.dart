@@ -115,7 +115,7 @@ class Weather extends StatelessWidget {
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: <Widget>[
                                           Text(
-                                            weather.cityName,
+                                            '${weather.cityName}, ${weather.country}',
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold, fontSize: 20),
                                           ),
@@ -185,7 +185,7 @@ class Weather extends StatelessWidget {
                                                     width: 50,
                                                   ),
                                                   SizedBox(height: 20),
-                                                  Text('${weather.sunRise} AM IST'),
+                                                  Text('${weather.sunRise} IST'),
                                                 ],
                                               ),
                                             ),
@@ -201,7 +201,7 @@ class Weather extends StatelessWidget {
                                                     width: 50,
                                                   ),
                                                   SizedBox(height: 20),
-                                                  Text('${weather.sunSet} PM IST'),
+                                                  Text('${weather.sunSet} IST'),
                                                 ],
                                               ),
                                             ),

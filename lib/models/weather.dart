@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 
 class Weather extends Equatable{
   final String main;
@@ -16,6 +15,7 @@ class Weather extends Equatable{
   final String sunRise;
   final String sunSet;
   final String mainIcon;
+  final String country;
 
   const Weather({
     this.main,
@@ -32,6 +32,7 @@ class Weather extends Equatable{
     this.sunRise,
     this.sunSet,
     this.mainIcon,
+    this.country,
   });
 
   @override
@@ -50,6 +51,7 @@ class Weather extends Equatable{
     sunRise,
     sunSet,
     mainIcon,
+    country,
   ];
 
   static Weather fromJson(dynamic json){
@@ -68,14 +70,26 @@ class Weather extends Equatable{
       sunSet: getClockInIst(json['sys']['sunset']),
       main: json['weather'][0]['main'],
       mainIcon: json['weather'][0]['icon'],
+      country: json['sys']['country'],
     );
   }
 
   static String getClockInIst(int timeSinceEpochInSec) {
     final time = DateTime.fromMillisecondsSinceEpoch(timeSinceEpochInSec * 1000,
         isUtc: true)
-        .add(const Duration(hours: 5, minutes: 30));
-    return '${time.hour}:${time.minute}';
+        .add(const Duration(hours: 05, minutes: 30));
+    String hour = time.hour.toString();
+    String min = time.minute.toString();
+    
+    if(time.minute<10){
+      min = '0$min';
+    }
+    if(time.hour>12){
+      hour = '${time.hour-12}';
+      return '$hour:$min PM';
+    }
+
+    return '$hour:$min AM';
   }
 
 }
